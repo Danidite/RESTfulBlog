@@ -111,6 +111,10 @@ app.delete("/blogs/:id", (req, res) => {
     });
 });
 
+app.get("*", (req, res) => {
+    res.redirect("/blogs");
+});
+
 app.listen(3000, () => {
     console.log("The RESTful Blog Server Has Started!");
 });
