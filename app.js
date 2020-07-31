@@ -115,7 +115,8 @@ app.get("*", (req, res) => {
     res.redirect("/blogs");
 });
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
     console.log("The RESTful Blog Server Has Started!");
 });
 
