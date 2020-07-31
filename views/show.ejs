@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col p-2 col-11 col-sm-10 col-md-9 col-lg-7">
+            <div class="card">
+                <h5 class="card-header"><%= blog.title %></h5>
+                <img src="<%= blog.image %>" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title"><%= blog.created.toDateString() %></h5>
+                  <p class="card-text"><%- blog.body %></p>
+                  <div class="row">
+                    <a href="/blogs/<%= blog._id %>/edit" class="btn btn-primary mx-2">Edit</a>
+                    <form action="/blogs/<%= blog._id %>?_method=DELETE" method="POSt">
+                        <button class="btn btn-danger">DELETE</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include("partials/footer") %>
